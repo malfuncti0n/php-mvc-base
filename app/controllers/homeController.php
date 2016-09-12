@@ -24,7 +24,7 @@ class homeController extends  Controller
         // echo $user->name;
         //old way
         //  $this->view('home/index.html',['name'=>$user->name]);
-        $this->loadControllerMethod('test','test',array());
+        //$this->loadControllerMethod('test','test',array());
         echo $this->view()->render('home/index.twig.html',array('banana'=>'ptata'));
     }
 
