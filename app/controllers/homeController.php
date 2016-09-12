@@ -18,14 +18,7 @@ class homeController extends  Controller
 
     public function index($params=[]){
 
-        //old view without twig.
-        //$user=$this->user;
-        //$user->name=$name;
-        // echo $user->name;
-        //old way
-        //  $this->view('home/index.html',['name'=>$user->name]);
-        //$this->loadControllerMethod('test','test',array());
-        echo $this->view()->render('home/index.twig.html',array('banana'=>'ptata'));
+        echo $this->view()->render('home/index.twig.html',array('a_variable'=>'a_value'));
     }
 
 
