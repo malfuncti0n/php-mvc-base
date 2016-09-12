@@ -22,6 +22,7 @@ class Controller
             'cache' => '../app/cache','debug' => true
         ));
         $twig->addExtension(new Twig_Extension_Debug());
+     
         return $twig;
 
 
