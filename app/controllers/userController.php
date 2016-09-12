@@ -8,9 +8,13 @@
  */
 class userController extends Controller
 {
-
+    //flash message implementation
+    
     public function index($params=[]){
-        echo $this->view()->render('user/index.twig.html');
+        $params=['msg'=>'Render is ok '];
+       // $this->view->()->addGobal('params',$params);
+        echo $this->view()->render('user/index.twig.html',array('params'=>$params));
+       
     }
 
 }
