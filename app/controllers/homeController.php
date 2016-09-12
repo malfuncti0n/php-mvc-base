@@ -13,7 +13,7 @@ class homeController extends  Controller
     {
         //etsi fortwnw modelo
         $this->user= $this->model('User');
-        var_dump($this->user);
+       // var_dump($this->user);
     }
 
     public function index($params=[]){
