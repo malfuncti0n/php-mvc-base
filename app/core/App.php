@@ -8,7 +8,7 @@
 class App{
 
 
-    protected $controller='home';
+    protected $controller='homeController';
 
     protected $method='index';
 
