@@ -8,7 +8,10 @@
  */
 class Controller
 {
+   // protected $method='index';
+    protected $controller;
 
+    
     //methodos poy fortonei to modelo kai to epistrefei
     public function model($model){
         require_once '../app/models/'. $model. '.php';
@@ -25,9 +28,19 @@ class Controller
      
         return $twig;
 
-
-        //old view way
-       // require_once '../app/views/' . $view .'.php';
+    }
+    //function gia na kanoume load osous controller den antistixoun se
+    //route
+    public function loadControllerMethod($controller,$method,$params=[]){
+            if(file_exists('../app/controllers/'. $controller. 'Controller.php')){
+            $this->controller = $controller.'Controller';
+            require_once '../app/controllers/'. $this->controller . '.php';
+            $this->controller= new $this->controller;
+            if(method_exists($this->controller,$method)){
+                call_user_func_array([$this->controller,$method],$params);
+            }
+            }
+        
     }
 
 
