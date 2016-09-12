@@ -10,7 +10,7 @@ class userController extends Controller
 {
 
     public function index($params=[]){
-        echo $this->view()->render('user/index.html');
+        echo $this->view()->render('user/index.twig.html');
     }
 
 }
