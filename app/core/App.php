@@ -8,6 +8,10 @@
 
 
 use Noodlehaus\Config;
+use Illuminate\Container\Container;
+use Illuminate\Events\Dispatcher;
+use Illuminate\Http\Request;
+use Illuminate\Routing\Router;
 
 class App{
 
@@ -46,35 +50,18 @@ class App{
         require_once '../app/database.php';
         //telos database connection
 
+        $events = new Dispatcher(new Container);
+        // Create the router instance
+        $router = new Router($events);
+        // Load the routes
+        require_once 'routes.php';
+        // Create a request from server variables
+        $request = Request::capture();
+        // Dispatch the request through the router
+        $response = $router->dispatch($request);
+        // Send the response back to the browser
+        $response->send();
 
-        //apo edw kai kato controller kai methods
-        if(file_exists('../app/controllers/'. $url[0]. 'Controller.php')){
-            $this->controller = $url[0].'Controller';
-            unset($url[0]);
-
-        }
-        //diaforetika kane require ton home controller
-        require_once '../app/controllers/'. $this->controller . '.php';
-        $this->controller= new $this->controller;
-        if(isset($url[1])){
-            //edw kitame an yparxei h methothos ston controller
-            if(method_exists($this->controller,$url[1])){
-                $this->method=$url[1];
-                unset($url[1]);
-            }
-
-        }
-
-        //oti einai meta th methodo to epistrefoume san array
-        //an einai keno, epistrefoume adio array
-        if(isset($url)) {
-            $this->params = array_values($url);
-        }else{
-            $this->params=array();
-        }
-      //  print_r($this->params);
-
-        call_user_func_array([$this->controller,$this->method],$this->params);
     }
 
     public function parseUrl(){
