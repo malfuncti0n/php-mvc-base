@@ -2,6 +2,7 @@
 //here we defining our routes
 
 use Illuminate\Routing\Router;
+use Symfony\Component\HttpFoundation\Request as Request;
 
 
 //home routes
@@ -10,8 +11,20 @@ $router->get('/', 'homeController@index')->name('home.index');
 //user managment routes
 $router->get('/user','userController@index')->name('user.index');
 $router->get('/user/login', 'userController@getLogin')->name('user.login');
+$router->post('/user/login', 'userController@postLogin');
 $router->get('/user/register', 'userController@getRegister')->name('user.register');
+//$router->post('/user/register', 'userController@postRegister');
+
+$router->post('/user/register', function(){
+$request = new Request;
+  var_dump($request);
+  echo "mplampla";
+  
+  var_dump($request->get('email'));
+});
+
 $router->get('/user/profile', 'userController@getProfile')->name('user.profile');
+
 
 
 // catch-all route

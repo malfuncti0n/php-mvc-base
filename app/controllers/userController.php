@@ -27,6 +27,11 @@ class userController extends Controller
         echo $this->view()->render('user/register.twig.html',array());
     }
     
+        public function postRegister(){
+        
+        echo 'postRegister';
+    }
+    
     public function getProfile(){
         echo $this->view()->render('user/profile.twig.html',array());
     }
