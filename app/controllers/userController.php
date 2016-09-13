@@ -16,5 +16,14 @@ class userController extends Controller
         echo $this->view()->render('user/index.twig.html',array('params'=>$params));
        
     }
+    
+    public function getLogin(){
+        echo $this->view()->render('user/login.twig.html',array());
+
+    }
+    
+    public function getRegister(){
+        echo $this->view()->render('user/register.twig.html',array());
+    }
 
 }
