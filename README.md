@@ -1,5 +1,5 @@
 # php-mvc-base
-PHP MVC structured application with bootstrap, twig template engine eloquent orm support. Autoloading routes to apropriate Controller's method
+PHP MVC structured application with bootstrap, twig template engine eloquent orm support and laravel routes. It is a good base to start for your project.
 
 How to install:
 
