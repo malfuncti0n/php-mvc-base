@@ -10,7 +10,6 @@ use Illuminate\Routing\Router;
 //});
 
 $router->get('/', 'homeController@index')->name('home.index');
-
 $router->get('/user','userController@index')->name('user.index');
 
 
