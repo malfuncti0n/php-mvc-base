@@ -10,3 +10,11 @@ How to install:
 3) composer install
 
 4) import Sql files from db_schema to database
+
+
+
+Functionality to add:
+
+1) complete login-register-profile-of a user
+2) implement dynamic blog system
+3) incude post editor.
