@@ -2,7 +2,6 @@
 //here we defining our routes
 
 use Illuminate\Routing\Router;
-use Symfony\Component\HttpFoundation\Request as Request;
 
 
 //home routes
@@ -16,11 +15,8 @@ $router->get('/user/register', 'userController@getRegister')->name('user.registe
 //$router->post('/user/register', 'userController@postRegister');
 
 $router->post('/user/register', function(){
-$request = new Request;
-  var_dump($request);
-  echo "mplampla";
-  
-  var_dump($request->get('email'));
+    echo hashController::password('hawk');
+  echo inputController::get('email');
 });
 
 $router->get('/user/profile', 'userController@getProfile')->name('user.profile');
