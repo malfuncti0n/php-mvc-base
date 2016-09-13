@@ -16,5 +16,7 @@ How to install:
 Functionality to add:
 
 1) complete login-register-profile-of a user
+
 2) implement dynamic blog system
+
 3) incude post editor.
